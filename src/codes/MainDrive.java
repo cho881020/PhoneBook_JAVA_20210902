@@ -35,12 +35,49 @@ public class MainDrive {
 			if (inputMenu == 0) {
 				break;
 			}
+//			1 : 추가 등록 기능, 2 : 목록 조회, 그 외 : 잘못된 입력.
+			else if (inputMenu == 1) {
+				
+				addPhoneNum();
+				
+			}
+			else if (inputMenu == 2) {
+				
+				showAllPhoneNum();
+				
+			}
+			else {
+				System.out.println("잘못된 입력입니다. 메뉴로 돌아갑니다..");
+				
+//				2초 정도 프로그램 정지. => 그 후에 메뉴로.
+				try {
+//					예외처리 진행
+					Thread.sleep(2000);
+					
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
 		}
 		
 //		종료 안내 문구
 		System.out.println("프로그램을 종료합니다..");
 		
 	}
+	
+	
+//	폰번 추가하는 관련 코드 함수
+	static void addPhoneNum() {
+		
+	}
+	
+//	모든 목록 조회하는 함수
+	static void showAllPhoneNum() {
+		
+	}
+	
 	
 }
 
