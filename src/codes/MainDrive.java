@@ -1,7 +1,10 @@
 package codes;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -163,6 +166,48 @@ public class MainDrive {
 	static void addUsersByFile( List<UserData> list ) {
 		
 //		목록을 담아주고싶은 List하나를 받아서, 거기에 추가.
+		
+//		파일에 적힌 내용을 list에 추가.
+		
+		File myFile = new File("myPhoneBook.csv");
+		
+		try {
+//			지정된 파일을 (2byte-한글자씩) 읽어주는 클래스  -> 예외처리 필요
+			FileReader fr = new FileReader(myFile);
+			
+//			한글자씩 읽는건 처리 불편. => 한 문장씩 String으로 뭉쳐서 읽어오게 하는 보조 도구.
+			BufferedReader br = new BufferedReader(fr);
+			
+			
+//			br 이 한줄씩 계속 읽어오게. 몇줄이나 있을지 알 수 없다. -> 무한반복 + break;
+			while(true) {
+				
+//				한줄 읽어오기. 변수에 담자. (예외처리 필요-이미 try문 안에서 작업중.)
+				String line = br.readLine();
+				
+//				읽어온 line이 null이라면, 다 읽어와서 더 불러올 내용이 없었다.
+				
+				if (line == null) {
+					
+//					읽어올게 없으니 반복 종료.
+					break;
+				}
+				
+			}
+			
+			
+			
+			
+		} catch (FileNotFoundException e) {
+			
+			System.out.println("아직 저장된 번호가 하나도 없습니다.");
+			System.out.println("전화번호부 파일이 만들어지지 않았습니다.");
+			
+		} catch (IOException e) {
+
+			System.out.println("파일은 잘 불러왔지만, 내용을 읽어올때 손상된 부분이 있습니다.");
+		}
+		
 		
 	}
 	
