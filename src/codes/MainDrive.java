@@ -4,7 +4,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import codes.datas.UserData;
 
 public class MainDrive {
 
@@ -142,11 +146,31 @@ public class MainDrive {
 //		ArrayList로, 사용자데이터 UserData 목록을 담아두자.
 //		UserData클래스를 추가해주자.
 		
+		List<UserData> userList = new ArrayList<>();
+		
+//		파일을 읽으면서 -> 저장된 줄들을 -> UserData로 변신. -> userList에 추가.
+		addUsersByFile(userList);
+		
+//		userList 목록에 들어있는 항목들을 syso.
+		
+		for (UserData  user  : userList) {
+			System.out.println(user);
+		}
+		
+		
+	}
+	
+	static void addUsersByFile( List<UserData> list ) {
+		
+//		목록을 담아주고싶은 List하나를 받아서, 거기에 추가.
 		
 	}
 	
 	
 }
+
+
+
 
 
 
