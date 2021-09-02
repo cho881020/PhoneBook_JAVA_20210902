@@ -71,6 +71,20 @@ public class MainDrive {
 //	폰번 추가하는 관련 코드 함수
 	static void addPhoneNum() {
 		
+//		 이름, 폰번, 출생년도를 순서대로 입력받자.
+		 Scanner myScanner = new Scanner(System.in);
+		 
+		 System.out.print("이름 입력 : ");
+		 String name = myScanner.next();
+		 
+		 System.out.print("폰번 입력 : ");
+		 String phoneNum = myScanner.next();
+		 
+		 System.out.print("출생년도 입력 : ");
+		 int birthYear = myScanner.nextInt();
+		 
+		 
+		
 	}
 	
 //	모든 목록 조회하는 함수
