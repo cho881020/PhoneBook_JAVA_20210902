@@ -1,5 +1,9 @@
 package codes;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainDrive {
@@ -89,7 +93,6 @@ public class MainDrive {
 
 //		 System.out.println(content);
 		 
-//		 완성된 한줄을, myPhoneBook.csv 파일에 저장하자.
 		 
 		 savePhoneNumToFile(content);
 		 
@@ -99,6 +102,36 @@ public class MainDrive {
 	
 //	가공된 한줄을 파일에 추가해주는 함수.
 	static void savePhoneNumToFile( String content  ) {
+		
+//		 완성된 한줄을, myPhoneBook.csv 파일에 저장하자.
+		
+		File myFile = new File("myPhoneBook.csv");
+		
+		try {
+			
+//			지정된 파일에, 데이터 작성을 해주는 클래스. (예외처리 필요)
+//			생성자의 두번째 파라미터 : 이어붙이기가 맞다. (기존내용 보존 O)
+			FileWriter fw = new FileWriter(myFile, true);
+			
+//			FileWriter는 2byte씩 데이터 처리. => 한 글자씩 적는다.
+//			한 문장씩 적게 하는게 편하겠다. 보조 도구 활용.
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+//			보조도구로, 저장할 내용을 한번에 한줄 저장.
+			bw.append(content);
+//			다음줄로 내려주기.
+			bw.newLine();
+			
+			
+//			다른 경우에도 파일에 접근할 수 있게, 사용이 끝나면 파일을 닫자.
+			bw.close();
+			fw.close();
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
