@@ -193,6 +193,16 @@ public class MainDrive {
 					break;
 				}
 				
+//				이 줄이 실행된다 : break 안만남. -> line == null 아님. 읽어올게 있었다.
+//				"이름,폰번,출생년도" 양식의 String. ->  "," 기준으로 분리하자.
+				
+				String[] userInfos = line.split(","); 
+				
+//				UserData 객체를 만들어서 -> 이름, 폰번, 출생년도를 생성자의 파라미터로 대입. -> list에 추가.
+				
+				list.add( new UserData(userInfos[0], userInfos[1], Integer.parseInt(userInfos[2])) );
+				
+				
 			}
 			
 			
