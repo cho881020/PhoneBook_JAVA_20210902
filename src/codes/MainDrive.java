@@ -139,6 +139,10 @@ public class MainDrive {
 //	모든 목록 조회하는 함수
 	static void showAllPhoneNum() {
 		
+//		ArrayList로, 사용자데이터 UserData 목록을 담아두자.
+//		UserData클래스를 추가해주자.
+		
+		
 	}
 	
 	
